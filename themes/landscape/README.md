@@ -1,112 +1,126 @@
-# Landscape
+# Claudia
 
-A brand new default theme for [Hexo].
+[点我查看项目演示](https://haojen.github.io/Claudia-theme-blog/)
 
-- [Preview](http://hexo.io/hexo-theme-landscape/)
+![cover](./screenshot/claudia-cover.png)
 
-## Installation
+## 使用
 
-### Install
+### 使用评论系统
+> 在本主题的`_config.yml`配置文件
 
-``` bash
-$ git clone https://github.com/hexojs/hexo-theme-landscape.git themes/landscape
-```
+## 来比力
 
-**Landscape requires Hexo 2.4 and above.** If you would like to enable the RSS, the [hexo-generate-feed] plugin is also required.
+	use_livere: true
+	livere_uid: 你注册的来比力 uid
 
-### Enable
+## Disqus
 
-Modify `theme` setting in `_config.yml` to `landscape`.
+	use_disqus: true
+	disqus_url: 你的 Disqus 链接
 
-### Update
+### 配置博文封面图
 
-``` bash
-cd themes/landscape
-git pull
-```
+将 img 的 `alt` 属性设置为 `post-cover` 即可
 
-## Configuration
+### 配置右上角导航栏菜单项
 
-``` yml
-# Header
-menu:
-  Home: /
-  Archives: /archives
-rss: /atom.xml
+注意: 必须在主题的 `_config.yml` 中配置以下信息, 而非博客根目录下的 `_config.yml`
 
-# Content
-excerpt_link: Read More
-fancybox: true
+    menu:
+      Home: / #页面所在的路径
+      My Works: /works
+      About: /about
+      #Tags: /tags
 
-# Sidebar
-sidebar: right
-widgets:
-- category
-- tag
-- tagcloud
-- archives
-- recent_posts
 
-# Miscellaneous
-google_analytics:
-favicon: /favicon.png
-twitter:
-google_plus:
-```
+## 用户信息配置
 
-- **menu** - Navigation menu
-- **rss** - RSS link
-- **excerpt_link** - "Read More" link at the bottom of excerpted articles. `false` to hide the link.
-- **fancybox** - Enable [Fancybox]
-- **sidebar** - Sidebar style. You can choose `left`, `right`, `bottom` or `false`.
-- **widgets** - Widgets displaying in sidebar
-- **google_analytics** - Google Analytics ID
-- **favicon** - Favicon path
-- **twitter** - Twiiter ID
-- **google_plus** - Google+ ID
+注意: 必须在主题的 `_config.yml` 中配置以下信息, 而非博客根目录下的 `_config.yml`
 
-## Features
+	user_name: your name
+	user_avatar: your avatar
+	user_location: your location
+	user_description: about you introduction
+	
+	// this info will show About page
+	user_contact: 
+	user_introduction
+	
+	// config you share info
+	weibo_username: 
+	zhihu_username: 
+	github_username:
+	twitter_username: 
+	facebook_username:  
+	linkedin_username:  
+	
+## 创建 About 页面
+在博客根目录下的 `source` 文件夹里创建一个 `about` 文件夹, 然后打开该文件夹, 新建一个 `index.md`, 打开, 将下面这段文本复制到 `index.md` 里保存
+	
+	title: about
+	date: 2017-05-31 10:05:56
+	layout: about
+	---
 
-### Fancybox
-
-Landscape uses [Fancybox] to showcase your photos. You can use Markdown syntax or fancybox tag plugin to add your photos.
+## 创建 Works 页面
+创建的方式和上述创建 About 页面相同, 只不过是 `index.md` 内容略有不同, works 页面的 `index.md` 如下:
 
 ```
-![img caption](img url)
-
-{% fancybox img_url [img_thumbnail] [img_caption] %}
+title: My Works
+date: 2017-05-31 10:05:56
+layout: works
+---
 ```
 
-### Sidebar
+然后再在博客根目录下的 `source` 文件夹下创建一个 `_data` 文件夹, 然后打开, 在里面新建一个 `project.json` 文件
 
-You can put your sidebar in left side, right side or bottom of your site by editing `sidebar` setting.
+project.json 文件格式范本:
 
-Landscape provides 5 built-in widgets:
+	{
+	  "Apple 官网临摹": {
+	    "title": "Apple 官网临摹",
+	    "subTitle": "根据美版apple官网临摹",
+	    "img_link": "http://o7bkkhiex.bkt.clouddn.com/item-apple.jpg",
+	    "use" : ["jQuery"],
+	    "link": "http://haojen.github.io/apple-linmo/",
+	    "data":"2016.3",
+	    "direction": "临摹 2016 年三月份 Apple 美版单页面。"
+	  },
+	   "Anisina (阿尼丝娜)": {
+	    "title": "Anisina",
+	    "subTitle": "基于 Hexo 制作的个人博客主题",
+	    "img_link": "http://o7bkkhiex.bkt.clouddn.com/Anisina.png",
+	    "use" : ["jQuery","Bootstrap","Node.js","EJS","Hexo","SASS"],
+	    "link": "http://haojen.github.io/",
+	    "data": "2016.5",
+	    "direction":
+	        "Hexo 是某位台湾友人基于 Node.js 编写的博客框架"
+	  }
+	}
+	
+## 功能配置
+可以依次在主题的根目录中执行终端命令, 根据自身需求分别安装依赖
+	
+	// 流程图功能
+    npm install hexo-filter-flowchart --save
+    
+    // Emoji
+    npm install hexo-filter-github-emojis --save
+    
+    // 搜索功能
+    npm install hexo-generator-search --save
+    
+    // 数学公式
+    npm install hexo-renderer-mathjax --save
+    
+具体的使用教程, 请参阅 [博客中对应的文章](https://haojen.github.io/Claudia-theme-blog/)    
 
-- category
-- tag
-- tagcloud
-- archives
-- recent_posts
+## 💙 最后
 
-All of them are enabled by default. You can edit them in `widget` setting.
+如果遇到任何问题, 可以提交 issue , 你的反馈对我很重要!
+另外,喜欢的话不妨给个 Star 😍
 
-## Development
+## License
 
-### Requirements
-
-- [Grunt] 0.4+
-- Hexo 2.4+
-
-### Grunt tasks
-
-- **default** - Download [Fancybox] and [Font Awesome].
-- **fontawesome** - Only download [Font Awesome].
-- **fancybox** - Only download [Fancybox].
-- **clean** - Clean temporarily files and downloaded files.
-
-[Hexo]: https://hexo.io/
-[Fancybox]: http://fancyapps.com/fancybox/
-[Font Awesome]: http://fontawesome.io/
-[Grunt]: http://gruntjs.com/
-[hexo-generate-feed]: https://github.com/hexojs/hexo-generator-feed
+MIT © [haojen ma](http://haojen.github.io)
