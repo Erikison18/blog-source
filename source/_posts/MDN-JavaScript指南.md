@@ -1,3 +1,11 @@
+---
+title: MDN-JavaScript指南
+date: 2018-03-06 10:37:19
+tags: js
+categories:
+  - js
+---
+
 # introduction
 ##### 什么是 JavaScript ?
 JavaScript 是一门跨平台、面向对象的轻量级脚本语言。 在宿主环境（例如 web 浏览器）中， JavaScript 能够通过其所连接的环境提供的编程接口进行控制。

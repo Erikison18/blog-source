@@ -3,7 +3,7 @@ title: 从零开始学react
 date: 2018-03-04 21:04:43
 tags: react
 categories: 
-  - js
+  - react
 ---
 
 ## react(1)---HelloWorld

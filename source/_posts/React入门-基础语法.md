@@ -1,3 +1,10 @@
+---
+title: React入门-基础语法
+date: 2018-03-06 10:37:19
+tags: react
+categories:
+  - react
+---
 
 #### （1）JSX语法深入理解
 简介：从根本上来说，JSX语法提供了一种创建React元素的语法糖，JSX语句可以编译成： React.createElement(component, props, …children)的形式。
