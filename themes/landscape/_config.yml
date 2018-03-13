@@ -10,7 +10,7 @@ language: zh-CN #中国人嘛，用中文
 
 # User Info
 user_name: Erik
-user_avatar: /css/images/banner.jpg
+user_avatar: /css/images/user.jpg
 user_location: 重庆
 user_description: "前端攻城狮"
 user_contact:  
